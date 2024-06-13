@@ -26,4 +26,6 @@ h6 {
   --primary: #81c408;
   --secondary: #ffb524;
   --dark: #45595b;
+  --black: #000;
+  --text-rgba: rgba(255, 255, 255, 0.5);
 }
