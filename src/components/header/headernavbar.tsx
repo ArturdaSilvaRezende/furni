@@ -26,14 +26,12 @@ export default function HeaderNavbar() {
         <button className="toolbar__search">
           <FaSearch />
         </button>
-
         <div className="toolbar__bag">
           <button>
             <FaShoppingBag />
           </button>
           <span>13</span>
         </div>
-
         <div className="tool__user">
           <FaUser />
         </div>

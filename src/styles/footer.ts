@@ -2,7 +2,7 @@
 import tw, { styled } from "twin.macro";
 
 export const Footer = styled.footer`
-  ${tw`pt-10`}
+  ${tw`pt-10 dark:bg-slate-600`}
   background-color: var(--dark);
 
   .footer__container {
@@ -155,6 +155,7 @@ export const FooterInfo = styled.div`
     p,
     li,
     button {
+      ${tw`dark:text-white`}
       color: var(--text-rgba);
     }
 
@@ -238,7 +239,7 @@ export const FooterCopyright = styled.div`
   border-top: 1px solid var(--secondary);
 
   p {
-    ${tw`text-center`}
+    ${tw`text-center dark:text-white`}
     color: var(--text-rgba);
 
     a {
