@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -21,11 +22,24 @@ h6 {
   color: var(--dark);
 }
 
+.active__tabs {
+  background-color: var(--secondary) !important;
+  color: var(--white) !important;
+}
+
+@layer base {
+  body {
+    @apply dark:bg-slate-900 bg-gray-50 dark:text-white;
+  }
+}
+
 :root {
   --white: #fff;
   --primary: #81c408;
   --secondary: #ffb524;
   --dark: #45595b;
   --black: #000;
+  --gray: #f4f5f6;
   --text-rgba: rgba(255, 255, 255, 0.5);
+  --swiper-theme-color: #ffb524;
 }
