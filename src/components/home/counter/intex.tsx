@@ -1,3 +1,6 @@
+"use client";
+import { useRef } from "react";
+import UseCounterUp from "@/hooks/usecounterup";
 import { FaUsers } from "react-icons/fa";
 import { FaGears } from "react-icons/fa6";
 import { PiCertificateFill } from "react-icons/pi";
@@ -5,6 +8,20 @@ import { GiFruitBowl } from "react-icons/gi";
 import * as C from "@/styles/home/counter";
 
 export default function Counter() {
+  const refs = {
+    custumersRef: useRef<HTMLParagraphElement>(null),
+    qualityServiceRef: useRef<HTMLParagraphElement>(null),
+    qualityCertificateRef: useRef<HTMLParagraphElement>(null),
+    productsRef: useRef<HTMLParagraphElement>(null),
+  };
+
+  const counts = {
+    custumersCount: UseCounterUp(refs.custumersRef, 1963),
+    qualityServiceCount: UseCounterUp(refs.qualityServiceRef, 99),
+    qualityCertificateCount: UseCounterUp(refs.qualityCertificateRef, 33),
+    productsCount: UseCounterUp(refs.productsRef, 789),
+  };
+
   return (
     <C.Counter>
       <div className="counter__container">
@@ -13,7 +30,7 @@ export default function Counter() {
             <FaUsers />
           </span>
           <h2>SATISFIED CUSTOMERS</h2>
-          <p>1963</p>
+          <p ref={refs.custumersRef}>{counts.custumersCount}</p>
         </div>
 
         <div className="counter__box">
@@ -21,7 +38,7 @@ export default function Counter() {
             <FaGears />
           </span>
           <h2>QUALITY OF SERVICE</h2>
-          <p>99%</p>
+          <p ref={refs.qualityServiceRef}>{counts.qualityServiceCount}%</p>
         </div>
 
         <div className="counter__box">
@@ -29,7 +46,9 @@ export default function Counter() {
             <PiCertificateFill />
           </span>
           <h2>QUALITY CERTIFICATES</h2>
-          <p>33</p>
+          <p ref={refs.qualityCertificateRef}>
+            {counts.qualityCertificateCount}
+          </p>
         </div>
 
         <div className="counter__box">
@@ -37,7 +56,7 @@ export default function Counter() {
             <GiFruitBowl />
           </span>
           <h2>AVAILABLE PRODUCTS</h2>
-          <p>789</p>
+          <p ref={refs.productsRef}>{counts.productsCount}</p>
         </div>
       </div>
     </C.Counter>

@@ -24,7 +24,9 @@ export default function HeaderNavbar() {
 
       <div className="toolbar">
         <button className="toolbar__search">
-          <FaSearch />
+          <Link href="?searchmodal=true">
+            <FaSearch />
+          </Link>
         </button>
         <div className="toolbar__bag">
           <button>

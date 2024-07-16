@@ -22,6 +22,10 @@ h6 {
   color: var(--dark);
 }
 
+input {
+  outline: none;
+}
+
 .active__tabs {
   background-color: var(--secondary) !important;
   color: var(--white) !important;
