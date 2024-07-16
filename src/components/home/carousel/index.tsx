@@ -59,6 +59,7 @@ export default function Carousel() {
                   alt={item.title}
                   height={250}
                   width={250}
+                  priority
                 />
 
                 <figcaption>
