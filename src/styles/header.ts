@@ -61,7 +61,7 @@ export const HeaderPolicy = styled.div`
 `;
 
 export const HeaderContents = styled.div`
-  ${tw`flex justify-between items-center mt-5 relative `}
+  ${tw`flex justify-between items-center my-5 relative dark:bg-slate-900`}
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 

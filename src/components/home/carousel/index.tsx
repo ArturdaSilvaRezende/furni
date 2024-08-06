@@ -1,19 +1,17 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { CartContext } from "@/contexts/cartcontext";
 import { FaShoppingBag } from "react-icons/fa";
-import { VegetablesType, VegetablesList } from "./carousellist";
+import { VegetablesList } from "./carousellist";
 import * as C from "@/styles/home/carousel";
 
 export default function Carousel() {
-  const [carouselItem, setCarouselItem] = useState<VegetablesType[]>([]);
-
-  useEffect(() => {
-    setCarouselItem(VegetablesList);
-  }, []);
+  const { addToCart } = useContext(CartContext);
+  const carouselItem = VegetablesList;
 
   return (
     <C.Carousel>
@@ -55,21 +53,25 @@ export default function Carousel() {
             <SwiperSlide key={item.id}>
               <figure>
                 <Image
-                  src={item.imagePath}
-                  alt={item.title}
+                  src={item.image}
+                  alt={item.name}
                   height={250}
                   width={250}
                   priority
                 />
 
                 <figcaption>
-                  <h2>{item.title}</h2>
+                  <h2>{item.name}</h2>
                   <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea
                     laboriosam architecto neque blanditiis labore.
                   </p>
                   <p>$7,99 / KG</p>
-                  <button>
+                  <button
+                    onClick={() => {
+                      addToCart(item);
+                    }}
+                  >
                     <span>
                       <FaShoppingBag />
                     </span>
