@@ -1,7 +1,7 @@
 "use client";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
-import Link from "next/link";
 import * as C from "@/styles/modal";
 import "@/styles/animations.css";
 
@@ -14,7 +14,19 @@ export function Modal({
 }) {
   const searchParams = useSearchParams();
   const modal = searchParams.get(ModalParams);
-  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleOverflow = () => {
+    document.body.style.overflowY = "auto";
+  };
+
+  useEffect(() => {
+    if (modal) {
+      document.body.style.overflowY = "hidden";
+    }
+
+    return () => handleOverflow();
+  }, [modal]);
 
   return (
     <>
@@ -23,11 +35,15 @@ export function Modal({
           <div className="modal__container">
             {children}
 
-            <Link href={pathname} className="modal__close">
-              <button type="button">
-                <IoMdClose />
-              </button>
-            </Link>
+            <button
+              type="button"
+              onClick={() => {
+                router.back();
+              }}
+              className="modal__close"
+            >
+              <IoMdClose />
+            </button>
           </div>
         </C.Modal>
       )}

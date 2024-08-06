@@ -1,3 +1,5 @@
+import { CartQuantityType } from "@/types/cartquantity";
+
 const TabImageFruit01 = "/assets/images/fruit/fruit-1.png";
 const TabImageFruit02 = "/assets/images/fruit/fruit-2.png";
 const TabImageFruit03 = "/assets/images/fruit/fruit-3.png";
@@ -14,84 +16,89 @@ const TagImageBread01 = "/assets/images/breads/bread-1.png";
 const TagImageBread02 = "/assets/images/breads/bread-2.png";
 const TagImageBread03 = "/assets/images/breads/bread-3.png";
 
-export type Products = {
-  id: number;
-  typeTab: string;
-  image: string;
-  title: string;
-};
-
-export const ProductsList: Products[] = [
+export const ProductsList: CartQuantityType[] = [
   {
     id: 1,
-    typeTab: "Fruits",
+    price: 4.99,
+    category: "Fruits",
     image: `${TabImageFruit01}`,
-    title: "Pineapple",
+    name: "Pineapple",
   },
   {
     id: 2,
-    typeTab: "Vegetables",
+    price: 7.99,
+    category: "Vegetables",
     image: `${TabImageVegetables01}`,
-    title: "Tomato",
+    name: "Tomato",
   },
   {
     id: 3,
-    typeTab: "Cereals",
+    price: 7.99,
+    category: "Cereals",
     image: `${TabImageCereal01}`,
-    title: "Aveia",
+    name: "Aveia",
   },
   {
     id: 4,
-    typeTab: "Breads",
+    price: 19.99,
+    category: "Breads",
     image: `${TagImageBread01}`,
-    title: "Fruit Bread",
+    name: "Cinnamon Rolls",
   },
   {
     id: 5,
-    typeTab: "Fruits",
+    price: 4.99,
+    category: "Fruits",
     image: `${TabImageFruit02}`,
-    title: "Banana",
+    name: "Banana",
   },
   {
     id: 6,
-    typeTab: "Vegetables",
+    price: 7.99,
+    category: "Vegetables",
     image: `${TabImageVegetables02}`,
-    title: "Carrot",
+    name: "Carrot",
   },
   {
     id: 7,
-    typeTab: "Cereals",
+    price: 19.99,
+    category: "Cereals",
     image: `${TabImageCereal02}`,
-    title: "Granola",
+    name: "Granola",
   },
   {
     id: 8,
-    typeTab: "Breads",
+    price: 19.99,
+    category: "Breads",
     image: `${TagImageBread02}`,
-    title: "Fruit Bread",
+    name: "Chocolate Chip",
   },
   {
     id: 9,
-    typeTab: "Fruits",
+    price: 4.99,
+    category: "Fruits",
     image: `${TabImageFruit03}`,
-    title: "Apple",
+    name: "Apple",
   },
   {
     id: 10,
-    typeTab: "Vegetables",
+    price: 7.99,
+    category: "Vegetables",
     image: `${TabImageVegetables03}`,
-    title: "Cabbage",
+    name: "Cabbage",
   },
   {
     id: 11,
-    typeTab: "Cereals",
+    price: 19.99,
+    category: "Cereals",
     image: `${TabImageCereal03}`,
-    title: "Muesli",
+    name: "Muesli",
   },
   {
     id: 12,
-    typeTab: "Breads",
+    price: 19.99,
+    category: "Breads",
     image: `${TagImageBread03}`,
-    title: "Fruit Bread",
+    name: "Cloud Bread",
   },
 ];

@@ -2,7 +2,7 @@
 import tw, { styled } from "twin.macro";
 
 export const BtnBackToTop = styled.div`
-  ${tw`fixed bottom-1 right-1 w-auto transition-all ease-in`}
+  ${tw`fixed bottom-1 right-0.5 w-auto transition-all ease-in`}
   background-color: var(--primary);
   border-radius: 5px;
   z-index: 999;
@@ -12,10 +12,11 @@ export const BtnBackToTop = styled.div`
   }
 
   button {
-    ${tw`w-8 flex justify-end items-center p-2 rounded`}
+    ${tw`w-7 px-2 py-1 rounded relative right-1`}
+    font-size: 1.3rem;
 
     svg {
-      ${tw`text-white mx-auto`}
+      ${tw`text-white`}
     }
   }
 `;

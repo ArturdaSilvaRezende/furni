@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
+import CartContext from "@/contexts/cartcontext";
 
 //components
 import Header from "@/components/header";
@@ -37,11 +38,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <StyledComponentsRegistry>
         <GlobalStyles />
-        <body className={inter.className}>
-          <Header />
-          <Providers>{children}</Providers>
-          <Footer />
-        </body>
+        <CartContext>
+          <body className={inter.className}>
+            <Header />
+            <Providers>{children}</Providers>
+            <Footer />
+          </body>
+        </CartContext>
       </StyledComponentsRegistry>
     </html>
   );

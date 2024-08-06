@@ -1,7 +1,5 @@
+import ShopFruit from "@/components/pages/shop/shopfruits";
+
 export default function Shop() {
-  return (
-    <div>
-      <h1>Shop</h1>
-    </div>
-  );
+  return <ShopFruit />;
 }

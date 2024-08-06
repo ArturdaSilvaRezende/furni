@@ -1,16 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import Image from "next/image";
+import { CartContext } from "@/contexts/cartcontext";
 import { FaShoppingBag, FaStar } from "react-icons/fa";
-import { BestSellerType, BestSellerList } from "./bestsellerlist";
+import { BestSellerList } from "./bestsellerlist";
 import * as C from "@/styles/home/bestseller";
 
 export default function BestSeller() {
-  const [bestSellerItem, setBestSellerItem] = useState<BestSellerType[]>([]);
-
-  useEffect(() => {
-    setBestSellerItem(BestSellerList);
-  }, []);
+  const { addToCart } = useContext(CartContext);
+  const bestSellerItem = BestSellerList;
 
   return (
     <C.BestSeller>
@@ -28,14 +26,14 @@ export default function BestSeller() {
             <figure key={item.id}>
               <Image
                 src={item.image}
-                alt={item.title}
+                alt={item.name}
                 width={300}
                 height={300}
               />
 
               <figcaption>
-                <h3>{item.title}</h3>
-                <p>3,12$</p>
+                <h3>{item.name}</h3>
+                <p>${item.price}</p>
                 <div className="classification">
                   <span>
                     <FaStar />
@@ -53,7 +51,11 @@ export default function BestSeller() {
                     <FaStar />
                   </span>
                 </div>
-                <button>
+                <button
+                  onClick={() => {
+                    addToCart(item);
+                  }}
+                >
                   <span>
                     <FaShoppingBag />
                   </span>

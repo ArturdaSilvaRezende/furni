@@ -2,8 +2,9 @@
 import tw, { styled } from "twin.macro";
 
 export const Modal = styled.dialog`
-  ${tw`fixed left-0 top-0 w-full h-full bg-slate-900/70 z-50 overflow-hidden backdrop-blur 
+  ${tw`fixed left-0 top-0 w-full h-full bg-slate-900/70 z-50 backdrop-blur 
     flex justify-center items-center dark:bg-black/70`}
+  z-index: 1000;
 
   .modal__container {
     ${tw`relative container`}

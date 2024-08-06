@@ -31,6 +31,17 @@ input {
   color: var(--white) !important;
 }
 
+.border__red {
+  border: 2px solid tomato !important;
+}
+
+.active__shop {
+  span,
+  a {
+    @apply text-gray-400 font-semibold dark:text-amber-300;
+  }
+}
+
 @layer base {
   body {
     @apply dark:bg-slate-900 bg-gray-50 dark:text-white;
