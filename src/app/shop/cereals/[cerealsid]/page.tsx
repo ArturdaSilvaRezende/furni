@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ShopList } from "@/mocks/shoplist";
+import { ShopList } from "@/mocks/ShopList";
 import Link from "next/link";
 import Image from "next/image";
 import * as C from "@/styles/pages/shop";

@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import Breadcrumb from "@/components/breadcrumb";
-import ShopNavigation from "@/components/pages/shop/shopnavigation";
-import BtnBackToTop from "@/components/features/btnbacktotop";
+import Breadcrumb from "@/components/screen/breadcrumb";
+import ShopNavigation from "@/components/screen/pages/shop/ShopNavigation";
+import BtnBackToTop from "@/components/features/BtnBackToToP";
 import Loading from "./loading";
 import * as C from "@/styles/pages/shop";
 

@@ -1,14 +1,14 @@
-import BtnBackToTop from "@/components/features/btnbacktotop";
-import Banner from "@/components/home/banner";
-import BestSeller from "@/components/home/bestseller";
-import Carousel from "@/components/home/carousel";
-import Counter from "@/components/home/counter/intex";
-import Featurs from "@/components/home/featurs";
-import Hero from "@/components/home/hero";
-import ProductsTabs from "@/components/home/productstabs";
-import SearchModal from "@/components/home/searchmodal";
-import Services from "@/components/home/Services";
-import Testimonial from "@/components/home/testimonial/intext";
+import BtnBackToTop from "@/components/features/BtnBackToToP";
+import Banner from "@/components/screen/home/banner";
+import BestSeller from "@/components/screen/home/bestseller";
+import Carousel from "@/components/screen/home/carousel";
+import Counter from "@/components/screen/home/counter/intex";
+import Featurs from "@/components/screen/home/featurs";
+import Hero from "@/components/screen/home/hero";
+import ProductsTabs from "@/components/screen/home/productstabs";
+import SearchModal from "@/components/screen/home/searchmodal";
+import Services from "@/components/screen/home/Services";
+import Testimonial from "@/components/screen/home/testimonial/intext";
 
 export default function Home() {
   return (

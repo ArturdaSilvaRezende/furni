@@ -1,4 +1,4 @@
-import ShopFruit from "@/components/pages/shop/shopfruits";
+import ShopFruit from "@/components/screen/pages/shop/ShopFruits";
 
 export default function Page() {
   return <ShopFruit />;

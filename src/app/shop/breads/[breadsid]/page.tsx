@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ShopList } from "@/mocks/shoplist";
+import { ShopList } from "@/mocks/ShopList";
 import * as C from "@/styles/pages/shop";
 
 export function generateStaticParams() {

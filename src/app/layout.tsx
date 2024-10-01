@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
-import CartContext from "@/contexts/cartcontext";
 
 //components
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/components/screen/header";
+import Footer from "@/components/screen/footer";
 
 //styled components
 import StyledComponentsRegistry from "@/lib/registry";
@@ -38,13 +37,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <StyledComponentsRegistry>
         <GlobalStyles />
-        <CartContext>
-          <body className={inter.className}>
+        <body className={inter.className}>
+          <Providers>
             <Header />
-            <Providers>{children}</Providers>
+            {children}
             <Footer />
-          </body>
-        </CartContext>
+          </Providers>
+        </body>
       </StyledComponentsRegistry>
     </html>
   );

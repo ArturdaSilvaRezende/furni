@@ -2,9 +2,9 @@
 import { useState, useEffect } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
-interface ThemeToggleType {
+type ThemeToggleType = {
   className: string;
-}
+};
 
 const ThemeToggle = (props: ThemeToggleType) => {
   const [darkTheme, setDarkTheme] = useState(true);
@@ -31,7 +31,12 @@ const ThemeToggle = (props: ThemeToggleType) => {
   return (
     <div className={props.className}>
       <button onClick={() => setDarkTheme(!darkTheme)}>
-        {darkTheme ? <FaMoon /> : <FaSun />} <span>Dark Mode</span>
+        {darkTheme ? (
+          <FaMoon data-testid="theme-toggle-icon-moon" />
+        ) : (
+          <FaSun data-testid="theme-toggle-icon-sun" />
+        )}
+        <span>Dark Mode</span>
       </button>
     </div>
   );
